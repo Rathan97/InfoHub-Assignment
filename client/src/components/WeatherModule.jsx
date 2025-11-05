@@ -44,33 +44,31 @@ function Weather() {
   // Fetches current + 5-day forecast
   // ===========================
   const fetchWeather = async (cityName) => {
-    try {
-      if (!cityName) return;
-      setIsLoading(true);
-      setError("");
+  try {
+    if (!cityName) return;
+    setIsLoading(true);
+    setError("");
 
-      const res = await axios.get(
-        `${baseURL}/api/weather?city=${encodeURIComponent(cityName)}`
-      );
+    const res = await axios.get(
+      `${baseURL}/api/weather?city=${encodeURIComponent(cityName)}`
+    );
 
-  
+    if (res.status !== 200) throw new Error("City not found");
+    const weatherData = res.data;
 
-      if (!res.statusText ) throw new Error("City not found");
-      const weatherData = res.data
+    setData({
+      current: weatherData.current,
+      forecast: weatherData.forecast,
+    });
 
-      setData({
-        current: weatherData.current,
-        forecast: weatherData.forecast,
-      });
-
-      saveRecentSearch(cityName);
-    } catch (err) {
-      console.error("Weather fetch error:", err.message);
-      setError("Unable to fetch weather data. Please try again later.");
-    } finally {
-      setIsLoading(false);
-    }
-  };
+    saveRecentSearch(cityName);
+  } catch (err) {
+   
+    setError("Unable to fetch weather data. Please try again later.");
+  } finally {
+    setIsLoading(false);
+  }
+};
 
   // ===========================
   // Fetch Default City on Mount
