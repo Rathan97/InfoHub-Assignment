@@ -64,7 +64,7 @@ function CurrencyConverter() {
     return (
       <div className="bg-white flex flex-col items-center justify-center text-center min-h-screen">
         <img
-          src="../src/assets/Error.jpg"
+          src="../public/Error.jpg"
           alt="error"
           className="h-[150px] sm:h-[200px]"
         />
