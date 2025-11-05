@@ -68,7 +68,7 @@ InfoHub-Challenge/
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/your-username/InfoHub-Challenge.git
+git clone https://github.com/Rathan97/InfoHub-Assignment.git
 cd InfoHub-Challenge
 ```
 
