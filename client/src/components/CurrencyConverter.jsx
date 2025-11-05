@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 function CurrencyConverter() {
+
+  const baseURL = import.meta.env.VITE_API_BASE_URL || "";
   // ===========================
   // State Variables
   // ===========================
@@ -24,7 +26,7 @@ function CurrencyConverter() {
         setError("");
 
         const response = await axios.get(
-          `/api/currency?amount=${amount}`
+          `${baseURL}/api/currency?amount=${amount}`
         );
 
         setData({

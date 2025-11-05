@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 function Weather() {
+  const baseURL = import.meta.env.VITE_API_BASE_URL || "";
   // ===========================
   // State Variables
   // ===========================
@@ -49,7 +50,7 @@ function Weather() {
       setError("");
 
       const res = await axios.get(
-        `/api/weather?city=${encodeURIComponent(cityName)}`
+        `${baseURL}/api/weather?city=${encodeURIComponent(cityName)}`
       );
 
   

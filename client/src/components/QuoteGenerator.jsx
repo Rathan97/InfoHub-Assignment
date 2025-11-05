@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 function QuoteGenerator() {
+  const baseURL = import.meta.env.VITE_API_BASE_URL || "";
   // ===========================
   // State Variables
   // ===========================
@@ -21,7 +22,7 @@ function QuoteGenerator() {
         setError("");
 
         // Fetch quote from backend API
-        const response = await axios.get("/api/quote");
+        const response = await axios.get(`${baseURL}/api/quote`);
 
         if (response.data && response.data.quote) {
           setData(response.data); // Set quote + author data
