@@ -56,7 +56,7 @@ function QuoteGenerator() {
     return (
       <div className="bg-white flex flex-col items-center justify-center text-center min-h-screen">
         <img
-          src="../public/Error.jpg"
+          src="/Error.jpg"
           alt="error"
           className="h-[150px] sm:h-[200px]"
         />

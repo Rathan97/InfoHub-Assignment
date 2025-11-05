@@ -22,7 +22,7 @@ function App() {
           {/* Logo */}
           <a href="#" className="flex items-center">
             <img
-              src="../public/icon1.png"
+              src="/icon1.png"
               alt="logo"
               className="w-10 h-10 rounded-[50%] "
             />
