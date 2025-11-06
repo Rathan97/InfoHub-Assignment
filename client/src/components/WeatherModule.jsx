@@ -63,8 +63,14 @@ function Weather() {
 
     saveRecentSearch(cityName);
   } catch (err) {
+    if (err.response && err.response.status === 404) {
+  setError("City not found. Please try another city.");
+} else {
+  setError("Unable to fetch weather data. Please try again later.");
+}
+
    
-    setError("Unable to fetch weather data. Please try again later.");
+
   } finally {
     setIsLoading(false);
   }
